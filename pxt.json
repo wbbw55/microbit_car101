@@ -1,0 +1,21 @@
+{
+    "name": "Microbit_Car",
+    "version": "0.1.0",
+    "description": "Microbit Car Control",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "car.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": false,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}
