@@ -247,9 +247,9 @@ namespace Microbit_Car {
         return speed;
     }
 
-    //% blockId=GetSensor block="Get Motor |%motor| Set Speed"
+    //% blockId=GetSensor block="Get Distance Sensor Data"
     //% weight=85
-    export function GetSensor(void): number {
+    export function GetSensor(): number {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
         buf[2] = "S".charCodeAt(0);
