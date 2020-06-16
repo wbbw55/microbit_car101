@@ -154,21 +154,21 @@ namespace Microbit_Car {
     //% weight=75
     export function SetMecanum(x: number, y: number, a: number): void {
         let xf, yf, af;
-        if (x > 0)
+        if (x >= 0)
             xf = 1;
         else
         {
             xf = 0;
             x = -x;
         }
-        if (y > 0)
+        if (y >= 0)
             yf = 1;
         else
         {
             yf = 0;
             y = -y;
         }
-        if (a > 0)
+        if (a >= 0)
             af = 1;
         else
         {
