@@ -194,8 +194,8 @@ namespace Microbit_Car {
     export function SetMotor(motor:MOTOR,speed:number,direction:DIRECTION): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
-        buf[2] = "L".charCodeAt(0);
-        buf[3] = "F".charCodeAt(0);
+        buf[2] = "M".charCodeAt(0);
+        buf[3] = "S".charCodeAt(0);
         buf[4] = motor;
         buf[5] = direction;
         buf[6] = speed;
