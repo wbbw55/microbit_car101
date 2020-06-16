@@ -238,9 +238,9 @@ namespace Microbit_Car {
         buf[9] = 0;
         pins.i2cWriteBuffer(Car_Address, buf);
         let rxbuf = pins.createBuffer(2);
-        rxbuf = pins.i2cReadBuffer(Car_Address, 2)
+        rxbuf = pins.i2cReadBuffer(Car_Address,2);
         let speed;
-        if (rxbuf[0] == 1)
+        if (rxbuf[0])
             speed = rxbuf[1];
         else
             speed = -rxbuf[1];
