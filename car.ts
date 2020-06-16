@@ -191,7 +191,7 @@ namespace Microbit_Car {
 
     //% blockId=SetMotor block="Set |%motor| Motor Speed to |%speed| ,Direction |%direction| "
     //% weight=75
-    export function SetMotor(motor:MOTOR,direction:DIRECTION,speed:number): void {
+    export function SetMotor(motor:MOTOR,speed:number,direction:DIRECTION): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
         buf[2] = "L".charCodeAt(0);
