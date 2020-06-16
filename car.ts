@@ -16,7 +16,7 @@ enum DIRECTION{
     POSATIVE = 1
 }
 
-var buf = pins.createBuffer(10);
+let buf = pins.createBuffer(10);
 
 //% weight=5 color=#9900CC icon="\uf53b"
 namespace Microbit_Car {
