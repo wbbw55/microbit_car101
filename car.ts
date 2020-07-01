@@ -145,7 +145,9 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //% blockId=SetMotor block="set the wheel |%motor| speed (%) |%speed|"
+    //% blockId=SetMotor block="set the wheel |%motor| speed (%) $speed|"
+    //% speed.min=-100 speed.max=100
+    //% speed.defl=60
     //% weight=75
     //% group="Advance"
     export function SetMotor(motor:MOTOR,speed:number): void {
