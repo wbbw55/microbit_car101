@@ -230,9 +230,8 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //*% blockId=GetCarStatus block="Get Car Run Status"
-    //*% weight=85
-    /*
+    //% blockId=GetCarStatus block="Get Car Run Status"
+    //% weight=85
     export function GetCarStatus(): number {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -248,11 +247,9 @@ namespace Car101 {
         let stat = pins.i2cReadNumber(Car_Address, NumberFormat.UInt8LE);
         return stat;
     }
-    */
 
-    //*% blockId=GetCarSpeed block="Get Motor |%motor| Set Speed"
-    //*% weight=85
-    /*
+    //% blockId=GetCarSpeed block="Get Motor |%motor| Set Speed"
+    //% weight=85
     export function GetCarSpeed(motor:MOTOR): number {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -274,7 +271,6 @@ namespace Car101 {
             speed = -rxbuf[1];
         return speed;
     }
-    */
 
     //% blockId=GetSensor block="Get Distance Sensor Data"
     //% weight=85
