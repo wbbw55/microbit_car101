@@ -15,6 +15,7 @@
     "car101.SetBrake|block": "设置刹车|%motor|",
     "car101.SetMotor|block": "设置车轮|%motor|速度为$speed| \\%",
     "car101.GetSensor|block": "前方距离（毫米）",
+    "{id:category}Car101": "小车101",
     "{id:group}Basic": "基本",
     "{id:group}Advance": "高级",
 }
