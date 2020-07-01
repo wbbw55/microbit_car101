@@ -71,7 +71,7 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //% blockId=SetMecanum block="driving: X-speed $x|\\%, Y-speed $y|\\%, A-rotation $a|\\%"
+    //% blockId=SetMecanum block="driving: X-speed $x| \\%, Y-speed $y| \\%, A-rotation $a| \\%"
     //% x.min=-100 x.max=100
     //% x.defl=60
     //% y.min=-100 y.max=100
@@ -151,7 +151,7 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //% blockId=SetMotor block="set the wheel |%motor| speed $speed|\\%"
+    //% blockId=SetMotor block="set the wheel |%motor| speed $speed| \\%"
     //% speed.min=-100 speed.max=100
     //% speed.defl=60
     //% weight=75
