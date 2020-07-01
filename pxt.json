@@ -8,10 +8,10 @@
     },
     "files": [
         "README.md",
-        "car.ts"
+        "car.ts",
         "_locales/zh-cn/car101-strings.json",
         "_locales/zh-tw/car101-strings.json"
-        ],
+    ],
     "testFiles": [
         "test.ts"
     ],
