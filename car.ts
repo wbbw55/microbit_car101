@@ -18,19 +18,23 @@ enum LIGHT {
     BACK = 3
 }
 
+/*
 enum DIRECTION{
     NEGATIVE = 0,
     POSATIVE = 1
 }
+*/
 
 let buf = pins.createBuffer(10);
 
 //% weight=5 color=#007A4B icon="\uf63b"
+//% groups='["Basic", "Advance"]'
 namespace Car101 {
     const Car_Address = 0x10;
 
     //% blockId=EnableCar block="car start"
     //% weight=65
+    //% group="Basic"
     export function EnableCar(): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -53,6 +57,7 @@ namespace Car101 {
 
     //% blockId=DisableCar block="car stop"
     //% weight=65
+    //% group="Basic"
     export function DisableCar(): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -143,40 +148,9 @@ namespace Car101 {
     }
     */
 
-    //% blockId=LightOn block="turn on the car light |%light|"
+    //% blockId=SetMecanum block="driving: X-axis |%x|%, Y-axis |%y|%, A-rotation |%a|%"
     //% weight=75
-    export function LightOn(light:LIGHT): void {
-        buf[0] = "D".charCodeAt(0);
-        buf[1] = "O".charCodeAt(0);
-        buf[2] = "L".charCodeAt(0);
-        buf[3] = "T".charCodeAt(0);
-        buf[4] = light;
-        buf[5] = 0;
-        buf[6] = 0;
-        buf[7] = 0;
-        buf[8] = 0;
-        buf[9] = 0;
-        pins.i2cWriteBuffer(Car_Address, buf);
-    }
-
-    //% blockId=LightOff block="turn off the car light |%light|"
-    //% weight=75
-    export function LightOff(light:LIGHT): void {
-        buf[0] = "D".charCodeAt(0);
-        buf[1] = "O".charCodeAt(0);
-        buf[2] = "L".charCodeAt(0);
-        buf[3] = "F".charCodeAt(0);
-        buf[4] = light;
-        buf[5] = 0;
-        buf[6] = 0;
-        buf[7] = 0;
-        buf[8] = 0;
-        buf[9] = 0;
-        pins.i2cWriteBuffer(Car_Address, buf);
-    }
-
-    //% blockId=SetMecanum block="Set Mecanum Speed to X: |%x| ,Y: |%y| ,a: |%a| "
-    //% weight=75
+    //% group="Basic"
     export function SetMecanum(x: number, y: number, a: number): void {
         let xf, yf, af;
         if (x >= 0)
@@ -214,15 +188,55 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //% blockId=SetMotor block="Set |%motor| Motor Speed to |%speed| ,Direction |%direction| "
+    //% blockId=LightOn block="turn on the car light |%light|"
     //% weight=75
-    export function SetMotor(motor:MOTOR,speed:number,direction:DIRECTION): void {
+    //% group="Basic"
+    export function LightOn(light:LIGHT): void {
+        buf[0] = "D".charCodeAt(0);
+        buf[1] = "O".charCodeAt(0);
+        buf[2] = "L".charCodeAt(0);
+        buf[3] = "T".charCodeAt(0);
+        buf[4] = light;
+        buf[5] = 0;
+        buf[6] = 0;
+        buf[7] = 0;
+        buf[8] = 0;
+        buf[9] = 0;
+        pins.i2cWriteBuffer(Car_Address, buf);
+    }
+
+    //% blockId=LightOff block="turn off the car light |%light|"
+    //% weight=75
+    //% group="Basic"
+    export function LightOff(light:LIGHT): void {
+        buf[0] = "D".charCodeAt(0);
+        buf[1] = "O".charCodeAt(0);
+        buf[2] = "L".charCodeAt(0);
+        buf[3] = "F".charCodeAt(0);
+        buf[4] = light;
+        buf[5] = 0;
+        buf[6] = 0;
+        buf[7] = 0;
+        buf[8] = 0;
+        buf[9] = 0;
+        pins.i2cWriteBuffer(Car_Address, buf);
+    }
+
+    //% blockId=SetMotor block="set the wheel |%motor| speed |%speed|%"
+    //% weight=75
+    //% group="Advance"
+    export function SetMotor(motor:MOTOR,speed:number): void {
+        let dir: number = 1;
+        if (number<0) {
+            dir = 0;
+            number = -number;
+        }
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
         buf[2] = "M".charCodeAt(0);
         buf[3] = "S".charCodeAt(0);
         buf[4] = motor;
-        buf[5] = direction;
+        buf[5] = dir;
         buf[6] = speed;
         buf[7] = 0;
         buf[8] = 0;
@@ -276,8 +290,9 @@ namespace Car101 {
     }
     */
 
-    //% blockId=GetSensor block="Get Distance Sensor Data"
+    //% blockId=GetSensor block="distance ahead (mm)"
     //% weight=85
+    //% group="Advance"
     export function GetSensor(): number {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
