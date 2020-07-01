@@ -19,7 +19,7 @@ enum DIRECTION{
 let buf = pins.createBuffer(10);
 
 //% weight=5 color=#9900CC icon="\uf53b"
-namespace Microbit_Car {
+namespace Car101 {
     const Car_Address = 0x10;
 
     //% blockId=EnableCar block="Set Car Status to Enable"
