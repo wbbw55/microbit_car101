@@ -149,17 +149,16 @@ namespace Car101 {
     //% weight=75
     //% group="Advance"
     export function SetMotor(motor:MOTOR,speed:number): void {
-        let dir: number = 1;
-        if (speed<0) {
-            dir = 0;
-            speed = -speed;
-        }
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
         buf[2] = "M".charCodeAt(0);
         buf[3] = "S".charCodeAt(0);
         buf[4] = motor;
-        buf[5] = dir;
+        buf[5] = 1;
+        if (speed<0) {
+            buf[5] = 0;
+            speed = -speed;
+        }
         buf[6] = speed;
         buf[7] = 0;
         buf[8] = 0;
