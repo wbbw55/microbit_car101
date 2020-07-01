@@ -70,6 +70,15 @@ namespace Car101 {
         buf[3] = "O".charCodeAt(0);
         pins.i2cWriteBuffer(Car_Address, buf);
     }
+    
+    //% blockId=BrakeCar block="car brake"
+    //% weight=75
+    //% group="Basic"
+    export function CarBrake(): void {
+        
+        // ...
+        
+    }
 
     //% blockId=SetMecanum block="driving: X-speed $x| \\%, Y-speed $y| \\%, A-rotation $a| \\%"
     //% x.min=-100 x.max=100
@@ -151,6 +160,15 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
+    //% blockId=SetBrake block="set the wheel |%motor| brake"
+    //% weight=75
+    //% group="Advance"
+    export function SetBrake(motor:MOTOR): void {
+        
+        // ...
+        
+    }
+    
     //% blockId=SetMotor block="set the wheel |%motor| speed $speed| \\%"
     //% speed.min=-100 speed.max=100
     //% speed.defl=60
