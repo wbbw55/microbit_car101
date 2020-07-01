@@ -1,5 +1,5 @@
 {
-    "name": "Car101",
+    "name": "microbit_car101",
     "version": "0.1.1",
     "description": "Extension for Car101 module",
     "dependencies": {
