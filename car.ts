@@ -146,7 +146,7 @@ namespace Car101 {
     }
     */
 
-    //% blockId=SetMecanum block="driving: X-axis |%x|%, Y-axis |%y|%, A-rotation |%a|%"
+    //% blockId=SetMecanum block="driving: X-axis |%x|, Y-axis |%y|, A-rotation |%a|"
     //% weight=75
     //% group="Basic"
     export function SetMecanum(x: number, y: number, a: number): void {
@@ -220,7 +220,7 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //% blockId=SetMotor block="set the wheel |%motor| speed |%speed|%"
+    //% blockId=SetMotor block="set the wheel |%motor| speed |%speed|"
     //% weight=75
     //% group="Advance"
     export function SetMotor(motor:MOTOR,speed:number): void {
@@ -283,7 +283,7 @@ namespace Car101 {
     }
     */
 
-    //% blockId=GetSensor block="Get Distance Sensor Data"
+    //% blockId=GetSensor block="distance ahead (mm)"
     //% weight=85
     //% group="Advance"
     export function GetSensor(): number {
