@@ -1,7 +1,7 @@
 {
-    "name": "Car101",
-    "version": "0.11",
-    "description": "Car101 for micro:bit",
+    "name": "Microbit_Car",
+    "version": "0.1.0",
+    "description": "Microbit Car Control",
     "dependencies": {
         "core": "*",
         "radio": "*"
