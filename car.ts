@@ -21,7 +21,7 @@ enum LIGHT {
 let buf = pins.createBuffer(10);
 
 //% weight=5 color=#007A4B icon="\uf63b"
-//% groups='["Basic", "Advance"]'
+// groups='["Basic", "Advance"]'
 namespace Car101 {
     const Car_Address = 0x10;
 
@@ -50,7 +50,7 @@ namespace Car101 {
 
     //% blockId=DisableCar block="car stop"
     //% weight=65
-    //% group="Basic"
+    // group="Basic"
     export function DisableCar(): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -73,7 +73,7 @@ namespace Car101 {
 
     //% blockId=SetMecanum block="driving: X-axis |%x|%, Y-axis |%y|%, A-rotation |%a|%"
     //% weight=75
-    //% group="Basic"
+    // group="Basic"
     export function SetMecanum(x: number, y: number, a: number): void {
         let xf, yf, af;
         if (x >= 0)
@@ -113,7 +113,7 @@ namespace Car101 {
 
     //% blockId=LightOn block="turn on the car light |%light|"
     //% weight=75
-    //% group="Basic"
+    // group="Basic"
     export function LightOn(light:LIGHT): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -130,7 +130,7 @@ namespace Car101 {
 
     //% blockId=LightOff block="turn off the car light |%light|"
     //% weight=75
-    //% group="Basic"
+    // group="Basic"
     export function LightOff(light:LIGHT): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -147,7 +147,7 @@ namespace Car101 {
 
     //% blockId=SetMotor block="set the wheel |%motor| speed |%speed|%"
     //% weight=75
-    //% group="Advance"
+    // group="Advance"
     export function SetMotor(motor:MOTOR,speed:number): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -168,7 +168,7 @@ namespace Car101 {
 
     //% blockId=GetSensor block="distance ahead (mm)"
     //% weight=85
-    //% group="Advance"
+    // group="Advance"
     export function GetSensor(): number {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
