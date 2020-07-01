@@ -1,20 +1,13 @@
 enum MOTOR {
-    //% block="front-left"
-    M2 = 2,
-    //% block="front-right"
     M1 = 1,
-    //% block="rear-left"
+    M2 = 2,
     M3 = 3,
-    //% block="rear-right"
     M4 = 4
 }
 
 enum LIGHT {
-    //% block="front-left"
     FRONT_LEFT = 1,
-    //% block="front-right"
     FRONT_RIGHT = 2,
-    //% block="rear-brake"
     BACK = 3
 }
 
