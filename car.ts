@@ -26,7 +26,6 @@ namespace Car101 {
 
     //% blockId=EnableCar block="car start"
     //% weight=65
-    //% group="Basic"
     export function EnableCar(): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -126,7 +125,6 @@ namespace Car101 {
 
     //% blockId=LightOff block="turn off the car light |%light|"
     //% weight=75
-    // group="Basic"
     export function LightOff(light:LIGHT): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -150,10 +148,11 @@ namespace Car101 {
         buf[3] = "S".charCodeAt(0);
         buf[4] = motor;
         buf[5] = 1;
+        /*
         if (speed<0) {
             buf[5] = 0;
             speed = -speed;
-        }
+        }*/
         buf[6] = speed;
         buf[7] = 0;
         buf[8] = 0;
