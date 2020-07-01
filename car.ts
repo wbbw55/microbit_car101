@@ -227,9 +227,9 @@ namespace Car101 {
     //% group="Advance"
     export function SetMotor(motor:MOTOR,speed:number): void {
         let dir: number = 1;
-        if (number<0) {
+        if (speed<0) {
             dir = 0;
-            number = -number;
+            speed = -speed;
         }
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
