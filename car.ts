@@ -20,7 +20,7 @@ enum LIGHT {
 
 let buf = pins.createBuffer(10);
 
-//% weight=5 color=#007A4B icon="\uf63b"
+//% weight=5 color=#007A4B icon="\uf1b9"
 //% groups='["Basic", "Advance"]'
 namespace Car101 {
     const Car_Address = 0x10;
