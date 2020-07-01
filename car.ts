@@ -71,8 +71,14 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //% blockId=SetMecanum block="driving: X-axis ()|%x|, Y-axis ()|%y|, A-rotation ()|%a|"
+    //% blockId=SetMecanum block="driving: X-axis ()$x|, Y-axis ()$y|, A-rotation ()$a|"
     //% weight=75
+    //% x.min=-100 x.max=100
+    //% x.defl=60
+    //% y.min=-100 y.max=100
+    //% y.defl=60
+    //% a.min=-100 a.max=100
+    //% a.defl=60
     //% group="Basic"
     export function SetMecanum(x: number, y: number, a: number): void {
         let xf, yf, af;
