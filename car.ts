@@ -78,8 +78,8 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //*% blockId=CarRun block="Run the Car"
-    //*% weight=65
+    // blockId=CarRun block="Run the Car"
+    // weight=65
     /*
     export function CarRun(): void {
         buf[0] = "D".charCodeAt(0);
@@ -95,8 +95,8 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //*% blockId=CarStop block="Stop the Car"
-    //*% weight=65
+    // blockId=CarStop block="Stop the Car"
+    // weight=65
     export function CarStop(): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -112,8 +112,8 @@ namespace Car101 {
     }
     */
 
-    //*% blockId=SensorOn block="Open the Distance Sensor"
-    //*% weight=65
+    // blockId=SensorOn block="Open the Distance Sensor"
+    // weight=65
     /*
     export function SensorOn(): void {
         buf[0] = "D".charCodeAt(0);
@@ -130,8 +130,8 @@ namespace Car101 {
     }
     */
 
-    //*% blockId=SensorOff block="Stop the Distance Sensor"
-    //*% weight=65
+    // blockId=SensorOff block="Stop the Distance Sensor"
+    // weight=65
     /*
     export function SensorOff(): void {
         buf[0] = "D".charCodeAt(0);
@@ -244,8 +244,8 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //*% blockId=GetCarStatus block="Get Car Run Status"
-    //*% weight=85
+    // blockId=GetCarStatus block="Get Car Run Status"
+    // weight=85
     /*
     export function GetCarStatus(): number {
         buf[0] = "D".charCodeAt(0);
@@ -264,8 +264,8 @@ namespace Car101 {
     }
     */
 
-    //*% blockId=GetCarSpeed block="Get Motor |%motor| Set Speed"
-    //*% weight=85
+    // blockId=GetCarSpeed block="Get Motor |%motor| Set Speed"
+    // weight=85
     /*
     export function GetCarSpeed(motor:MOTOR): number {
         buf[0] = "D".charCodeAt(0);
