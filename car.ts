@@ -1,13 +1,20 @@
 enum MOTOR {
-    M1 = 1,
+    //% block="front-left"
     M2 = 2,
+    //% block="front-right"
+    M1 = 1,
+    //% block="rear-left"
     M3 = 3,
+    //% block="rear-right"
     M4 = 4
 }
 
 enum LIGHT {
+    //% block="front-left"
     FRONT_LEFT = 1,
+    //% block="front-right"
     FRONT_RIGHT = 2,
+    //% block="rear-brake"
     BACK = 3
 }
 
@@ -18,11 +25,11 @@ enum DIRECTION{
 
 let buf = pins.createBuffer(10);
 
-//% weight=5 color=#9900CC icon="\uf53b"
+//% weight=5 color=#007A4B icon="\uf63b"
 namespace Car101 {
     const Car_Address = 0x10;
 
-    //% blockId=EnableCar block="Set Car Status to Enable"
+    //% blockId=EnableCar block="car start"
     //% weight=65
     export function EnableCar(): void {
         buf[0] = "D".charCodeAt(0);
@@ -36,14 +43,20 @@ namespace Car101 {
         buf[8] = 0;
         buf[9] = 0;
         pins.i2cWriteBuffer(Car_Address, buf);
+        buf[2] = "C".charCodeAt(0);
+        buf[3] = "R".charCodeAt(0);
+        pins.i2cWriteBuffer(Car_Address, buf);
+        buf[2] = "S".charCodeAt(0);
+        buf[3] = "O".charCodeAt(0);
+        pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //% blockId=DisableCar block="Set Car Status to Disable"
+    //% blockId=DisableCar block="car stop"
     //% weight=65
     export function DisableCar(): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
-        buf[2] = "O".charCodeAt(0);
+        buf[2] = "S".charCodeAt(0);
         buf[3] = "F".charCodeAt(0);
         buf[4] = 0;
         buf[5] = 0;
@@ -52,10 +65,17 @@ namespace Car101 {
         buf[8] = 0;
         buf[9] = 0;
         pins.i2cWriteBuffer(Car_Address, buf);
+        buf[2] = "S".charCodeAt(0);
+        buf[3] = "T".charCodeAt(0);
+        pins.i2cWriteBuffer(Car_Address, buf);
+        buf[2] = "O".charCodeAt(0);
+        buf[3] = "F".charCodeAt(0);
+        pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //% blockId=CarRun block="Run the Car"
-    //% weight=65
+    //*% blockId=CarRun block="Run the Car"
+    //*% weight=65
+    /*
     export function CarRun(): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -70,8 +90,8 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //% blockId=CarStop block="Stop the Car"
-    //% weight=65
+    //*% blockId=CarStop block="Stop the Car"
+    //*% weight=65
     export function CarStop(): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -85,9 +105,11 @@ namespace Car101 {
         buf[9] = 0;
         pins.i2cWriteBuffer(Car_Address, buf);
     }
+    */
 
-    //% blockId=SensorOn block="Open the Distance Sensor"
-    //% weight=65
+    //*% blockId=SensorOn block="Open the Distance Sensor"
+    //*% weight=65
+    /*
     export function SensorOn(): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -101,9 +123,11 @@ namespace Car101 {
         buf[9] = 0;
         pins.i2cWriteBuffer(Car_Address, buf);
     }
+    */
 
-    //% blockId=SensorOff block="Stop the Distance Sensor"
-    //% weight=65
+    //*% blockId=SensorOff block="Stop the Distance Sensor"
+    //*% weight=65
+    /*
     export function SensorOff(): void {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -117,8 +141,9 @@ namespace Car101 {
         buf[9] = 0;
         pins.i2cWriteBuffer(Car_Address, buf);
     }
+    */
 
-    //% blockId=LightOn block="Turn on |%light| Light"
+    //% blockId=LightOn block="turn on the car light |%light|"
     //% weight=75
     export function LightOn(light:LIGHT): void {
         buf[0] = "D".charCodeAt(0);
@@ -134,7 +159,7 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //% blockId=LightOff block="Turn Off |%light| Light"
+    //% blockId=LightOff block="turn off the car light |%light|"
     //% weight=75
     export function LightOff(light:LIGHT): void {
         buf[0] = "D".charCodeAt(0);
@@ -205,8 +230,9 @@ namespace Car101 {
         pins.i2cWriteBuffer(Car_Address, buf);
     }
 
-    //% blockId=GetCarStatus block="Get Car Run Status"
-    //% weight=85
+    //*% blockId=GetCarStatus block="Get Car Run Status"
+    //*% weight=85
+    /*
     export function GetCarStatus(): number {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -222,9 +248,11 @@ namespace Car101 {
         let stat = pins.i2cReadNumber(Car_Address, NumberFormat.UInt8LE);
         return stat;
     }
+    */
 
-    //% blockId=GetCarSpeed block="Get Motor |%motor| Set Speed"
-    //% weight=85
+    //*% blockId=GetCarSpeed block="Get Motor |%motor| Set Speed"
+    //*% weight=85
+    /*
     export function GetCarSpeed(motor:MOTOR): number {
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
@@ -246,6 +274,7 @@ namespace Car101 {
             speed = -rxbuf[1];
         return speed;
     }
+    */
 
     //% blockId=GetSensor block="Get Distance Sensor Data"
     //% weight=85
