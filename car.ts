@@ -1,28 +1,28 @@
-enum MOTOR {
-    //% block="front-left"
-    M2 = 2,
-    //% block="front-right"
-    M1 = 1,
-    //% block="rear-left"
-    M3 = 3,
-    //% block="rear-right"
-    M4 = 4
-}
-
-enum LIGHT {
-    //% block="front-left"
-    FRONT_LEFT = 1,
-    //% block="front-right"
-    FRONT_RIGHT = 2,
-    //% block="rear-brake"
-    BACK = 3
-}
-
-let buf = pins.createBuffer(10);
 
 //% weight=5 color=#007A4B icon="\uf1b9"
 //% groups='["Basic", "Advance"]'
 namespace Car101 {
+    export enum MOTOR {
+        //% block="front-left"
+        M2 = 2,
+        //% block="front-right"
+        M1 = 1,
+        //% block="rear-left"
+        M3 = 3,
+        //% block="rear-right"
+        M4 = 4
+    }
+
+    export enum LIGHT {
+        //% block="front-left"
+        FRONT_LEFT = 1,
+        //% block="front-right"
+        FRONT_RIGHT = 2,
+        //% block="rear-brake"
+        BACK = 3
+    }
+
+    let buf = pins.createBuffer(10);
     const Car_Address = 0x10;
 
     //% blockId=DisableCar block="car stop"
