@@ -17,5 +17,5 @@
     "Car101.GetSensor|block": "前方距離（毫米）",
     "{id:category}Car101": "小車101",
     "{id:group}Basic": "基本",
-    "{id:group}Advance": "高級",
+    "{id:group}Advance": "高級"
 }
