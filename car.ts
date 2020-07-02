@@ -75,9 +75,17 @@ namespace Car101 {
     //% weight=75
     //% group="Basic"
     export function CarBrake(): void {
-        
-        // ...
-        
+        buf[0] = "D".charCodeAt(0);
+        buf[1] = "O".charCodeAt(0);
+        buf[2] = "M".charCodeAt(0);
+        buf[3] = "B".charCodeAt(0);
+        buf[4] = 1;
+        buf[5] = 1;
+        buf[6] = 1;
+        buf[7] = 1;
+        buf[8] = 0;
+        buf[9] = 0;
+        pins.i2cWriteBuffer(Car_Address, buf);
     }
 
     //% blockId=SetMecanum block="driving: X-speed $x| \\%, Y-speed $y| \\%, A-rotation $a| \\%"
@@ -90,38 +98,15 @@ namespace Car101 {
     //% weight=75
     //% group="Basic"
     export function SetMecanum(x: number, y: number, a: number): void {
-        let xf, yf, af;
-        if (x >= 0)
-            xf = 1;
-        else
-        {
-            xf = 0;
-            x = -x;
-        }
-        if (y >= 0)
-            yf = 1;
-        else
-        {
-            yf = 0;
-            y = -y;
-        }
-        if (a >= 0)
-            af = 1;
-        else
-        {
-            af = 0;
-            a = -a;
-        }
-        
         buf[0] = "D".charCodeAt(0);
         buf[1] = "O".charCodeAt(0);
         buf[2] = "C".charCodeAt(0);
         buf[3] = "S".charCodeAt(0);
-        buf[4] = xf;
+        buf[4] = 1;
         buf[5] = x;
-        buf[6] = yf;
+        buf[6] = 1;
         buf[7] = y;
-        buf[8] = af;
+        buf[8] = 1;
         buf[9] = a;
         pins.i2cWriteBuffer(Car_Address, buf);
     }
@@ -164,9 +149,18 @@ namespace Car101 {
     //% weight=75
     //% group="Advance"
     export function SetBrake(motor:MOTOR): void {
-        
-        // ...
-        
+        buf[0] = "D".charCodeAt(0);
+        buf[1] = "O".charCodeAt(0);
+        buf[2] = "M".charCodeAt(0);
+        buf[3] = "B".charCodeAt(0);
+        buf[4] = 0;
+        buf[5] = 0;
+        buf[6] = 0;
+        buf[7] = 0;
+        buf[8] = 0;
+        buf[9] = 0;
+        buf[motor+3] = 1;
+        pins.i2cWriteBuffer(Car_Address, buf);
     }
     
     //% blockId=SetMotor block="set the wheel |%motor| speed $speed| \\%"
