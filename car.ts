@@ -69,6 +69,7 @@ namespace Car101 {
         buf[2] = "S".charCodeAt(0);
         buf[3] = "O".charCodeAt(0);
         pins.i2cWriteBuffer(Car_Address, buf);
+        basic.pause(100);
     }
     
     //% blockId=BrakeCar block="car brake"
