@@ -9,7 +9,7 @@
     "Car101.DisableCar|block": "小车熄火",
     "Car101.EnableCar|block": "小车发动",
     "Car101.CarBrake|block": "小车刹车",
-    "Car101.SetMecanum|block": "小车行驶：X方向速度$x|\\%，Y方向速度$y|\\%，A自转速度$a|\\%",
+    "Car101.SetMecanum|block": "小车行驶：X方向速度$x| \\%，Y方向速度$y| \\%，A自转速度$a| \\%",
     "Car101.LightOff|block": "关闭车灯|%light|",
     "Car101.LightOn|block": "打开车灯|%light|",
     "Car101.SetBrake|block": "设置刹车|%motor|",
