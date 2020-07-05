@@ -40,12 +40,15 @@ namespace Car101 {
         buf[8] = 0;
         buf[9] = 0;
         pins.i2cWriteBuffer(Car_Address, buf);
+        basic.pause(100);
         buf[2] = "S".charCodeAt(0);
         buf[3] = "T".charCodeAt(0);
         pins.i2cWriteBuffer(Car_Address, buf);
+        basic.pause(100);
         buf[2] = "O".charCodeAt(0);
         buf[3] = "F".charCodeAt(0);
         pins.i2cWriteBuffer(Car_Address, buf);
+        basic.pause(100);
     }
 
     //% blockId=EnableCar block="car start"
@@ -63,9 +66,11 @@ namespace Car101 {
         buf[8] = 0;
         buf[9] = 0;
         pins.i2cWriteBuffer(Car_Address, buf);
+        basic.pause(100);
         buf[2] = "C".charCodeAt(0);
         buf[3] = "R".charCodeAt(0);
         pins.i2cWriteBuffer(Car_Address, buf);
+        basic.pause(100);
         buf[2] = "S".charCodeAt(0);
         buf[3] = "O".charCodeAt(0);
         pins.i2cWriteBuffer(Car_Address, buf);
