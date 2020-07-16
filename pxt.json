@@ -3,8 +3,7 @@
     "version": "0.1.1",
     "description": "Extension for Car101 module",
     "dependencies": {
-        "core": "*",
-        "radio": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
